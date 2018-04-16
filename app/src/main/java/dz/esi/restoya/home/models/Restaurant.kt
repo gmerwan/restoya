@@ -1,4 +1,4 @@
-package dz.esi.resto.home.models
+package dz.esi.restoya.home.models
 
 data class Restaurant (
         val _id : Int,

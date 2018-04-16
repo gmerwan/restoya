@@ -1,10 +1,10 @@
-package dz.esi.resto.start
+package dz.esi.restoya.start
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import dz.esi.resto.home.activities.HomeActivity
-import dz.esi.resto.R
+import dz.esi.restoya.home.activities.HomeActivity
+import dz.esi.restoya.R
 import org.jetbrains.anko.startActivity
 
 class SplachScreenActivity : AppCompatActivity() {

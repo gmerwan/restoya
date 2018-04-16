@@ -1,13 +1,13 @@
-package dz.esi.resto.home.activities
+package dz.esi.restoya.home.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import dz.esi.resto.R
+import dz.esi.restoya.R
 
-class OrderActivity : AppCompatActivity() {
+class ReservationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_order)
+        setContentView(R.layout.activity_reservation)
     }
 }

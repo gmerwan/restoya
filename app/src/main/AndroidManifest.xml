@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="dz.esi.resto"
+<manifest package="dz.esi.restoya"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
@@ -33,7 +33,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="dz.esi.resto.start.SplachScreenActivity" />
+                android:value="dz.esi.restoya.start.SplachScreenActivity" />
         </activity>
         <activity android:name=".home.activities.OrderActivity" />
         <activity android:name=".home.activities.ReservationActivity" />
@@ -54,7 +54,7 @@
             android:label="@string/title_activity_maps">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="dz.esi.resto.home.activities.HomeActivity" />
+                android:value="dz.esi.restoya.home.activities.HomeActivity" />
         </activity>
     </application>
 

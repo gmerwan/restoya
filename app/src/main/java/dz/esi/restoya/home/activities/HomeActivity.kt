@@ -1,4 +1,4 @@
-package dz.esi.resto.home.activities
+package dz.esi.restoya.home.activities
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -8,7 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import dz.esi.resto.R
+import dz.esi.restoya.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
 import kotlinx.android.synthetic.main.content_home.*
