@@ -1,4 +1,4 @@
-package dz.esi.resto
+package dz.esi.restoya
 
 import org.junit.Test
 
