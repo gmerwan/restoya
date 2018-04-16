@@ -5,10 +5,10 @@ data class Restaurant (
         var favorite : Boolean,
         var name : String,
         var address : String,
-        var phone : Int,
+        var phone : String,
         var email : String,
         var description : String,
         var facebook : String,
         var twitter : String,
-        var images : ArrayList<String>
+        var images : ArrayList<Int>
 )

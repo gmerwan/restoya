@@ -21,4 +21,14 @@ class HomeViewPagerAdapter (fragmentManager: FragmentManager) : FragmentStatePag
     override fun getCount(): Int {
         return 2
     }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        // return null to show no title.
+        return if (position == 0) {
+            "Restaurants"
+        } else {
+            "Collections"
+        }
+
+    }
 }

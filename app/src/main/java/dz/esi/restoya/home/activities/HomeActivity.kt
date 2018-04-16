@@ -3,11 +3,13 @@ package dz.esi.restoya.home.activities
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.design.widget.TabLayout
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import dz.esi.restoya.R
 import dz.esi.restoya.home.adapters.HomeViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_home.*
@@ -29,8 +31,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         pagerAdapter = HomeViewPagerAdapter(supportFragmentManager)
-        pagerAdapter.
         home_viewPager.adapter = pagerAdapter
+
+        val tabLayout = findViewById<View>(R.id.tabs) as TabLayout
+        tabLayout.setupWithViewPager(home_viewPager)
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
