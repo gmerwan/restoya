@@ -15,11 +15,23 @@ import dz.esi.restoya.R
  */
 class FeedFragment : Fragment() {
 
+    companion object {
+        /**
+         * new instance pattern for fragment
+         */
+        @JvmStatic
+        fun newInstance(): FeedFragment {
+            val newsFragment = FeedFragment()
+            val args = Bundle()
+            newsFragment.arguments = args
+            return newsFragment
+        }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_feed, container, false)
     }
-
 
 }

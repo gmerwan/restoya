@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="dz.esi.restoya"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dz.esi.restoya">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -56,6 +56,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="dz.esi.restoya.home.activities.HomeActivity" />
         </activity>
+        <activity
+            android:name=".home.activities.RestaurantActivity"
+            android:label="@string/title_activity_restaurant"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

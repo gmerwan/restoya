@@ -15,6 +15,19 @@ import dz.esi.restoya.R
  */
 class CollectionFragment : Fragment() {
 
+    companion object {
+        /**
+         * new instance pattern for fragment
+         */
+        @JvmStatic
+        fun newInstance(): CollectionFragment {
+            val newsFragment = CollectionFragment()
+            val args = Bundle()
+            newsFragment.arguments = args
+            return newsFragment
+        }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
