@@ -7,29 +7,17 @@
     tools:context=".start.SplachScreenActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="center"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher"
-        tools:layout_editor_absoluteX="0dp" />
+        android:scaleType="centerInside"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="centerInside"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:text="Restoya"
         android:textSize="22sp"
-        android:textAppearance="@android:style/TextAppearance"
-        android:visibility="visible"
-        android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.65999997" />
+        android:textColor="@color/colorPrimaryText"/>
 
 </android.support.constraint.ConstraintLayout>
