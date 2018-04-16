@@ -11,6 +11,7 @@ import android.view.MenuItem
 import dz.esi.resto.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
+import kotlinx.android.synthetic.main.content_home.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -41,7 +42,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the Menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.home, menu)
         return true
     }

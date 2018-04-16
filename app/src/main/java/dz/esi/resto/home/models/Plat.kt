@@ -1,8 +1,8 @@
 package dz.esi.resto.home.models
 
-data class Collection (
+data class Plat (
         val _id : Int,
         val name : String,
         var image : String,
-        var restaurants : ArrayList<Restaurant>
+        var restaurant : Int
 )
