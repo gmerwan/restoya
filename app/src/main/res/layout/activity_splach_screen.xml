@@ -12,4 +12,12 @@
         app:srcCompat="@drawable/ic_launcher"
         android:scaleType="centerInside"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="Restoya"
+        android:textSize="22sp"
+        android:textColor="@color/colorPrimaryText"/>
+
 </android.support.constraint.ConstraintLayout>

@@ -1,8 +1,8 @@
 package dz.esi.restoya.home.models
 
 data class Collection (
-        val _id : Int,
-        val name : String,
-        var image : String,
+        var _id : Int,
+        var name : String,
+        var image : Int,
         var restaurants : ArrayList<Restaurant>
 )
