@@ -1,10 +1,13 @@
 package dz.esi.restoya.home.fragments
 
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,8 +48,11 @@ class CollectionFragment : Fragment() {
         initRestaurants()
         initCollections()
         val recyclerView = view.findViewById<RecyclerView>(R.id.collection_recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        //feed_recyclerView.layoutManager = GridLayoutManager(context)
+        if (isTablet(context)) {
+            recyclerView.layoutManager = GridLayoutManager(context, 3)
+        } else {
+            recyclerView.layoutManager = LinearLayoutManager(context)
+        }
         recyclerView.adapter = CollectionAdapter(collections, requireContext())
         return view
     }
@@ -70,5 +76,21 @@ class CollectionFragment : Fragment() {
     private fun initCollections() {
         collections.add(Collection(0,"Diabetics Food", R.drawable.healthy, restaurants))
         collections.add(Collection(1,"Healthy Food", R.drawable.healthy, restaurants))
+    }
+
+    fun isTablet(context : Context?): Boolean {
+        try {
+            // Compute screen size
+            val dm = context!!.resources.displayMetrics
+            val screenWidth = dm.widthPixels / dm.xdpi
+            val screenHeight = dm.heightPixels / dm.ydpi
+            val size = Math.sqrt(Math.pow(screenWidth.toDouble(), 2.0) + Math.pow(screenHeight.toDouble(), 2.0))
+            // Tablet devices should have a screen size greater than 6 inches
+            return size >= 6
+        } catch (t: Throwable) {
+            Log.d("TAG", "Failed to compute screen size", t)
+            return false
+        }
+
     }
 }

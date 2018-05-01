@@ -23,7 +23,7 @@ import android.util.Log
  * A simple [Fragment] subclass.
  *
  */
-class FeedFragment : Fragment() {
+class FavoriteFragment : Fragment() {
 
     private val restaurants: ArrayList<Restaurant> = ArrayList()
     private val images: ArrayList<Int> = ArrayList()
@@ -33,8 +33,8 @@ class FeedFragment : Fragment() {
          * new instance pattern for fragment
          */
         @JvmStatic
-        fun newInstance(): FeedFragment {
-            val newsFragment = FeedFragment()
+        fun newInstance(): FavoriteFragment {
+            val newsFragment = FavoriteFragment()
             val args = Bundle()
             newsFragment.arguments = args
             return newsFragment
@@ -58,16 +58,10 @@ class FeedFragment : Fragment() {
 
     private fun initRestaurants() {
         images.add(R.drawable.restaurant)
-        restaurants.add(Restaurant(0,false, "McDonalds", "Algiers • Algeria",
+        restaurants.add(Restaurant(0,true, "McDonalds", "Algiers • Algeria",
                 "0699178859", "email@restaurant.dz", "description",
                 "URL", "URL",images))
-        restaurants.add(Restaurant(0,false, "KFC", "Oran • Algeria",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
-        restaurants.add(Restaurant(0,false, "Koul W Thenna", "Annaba • Algeria",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
-        restaurants.add(Restaurant(0,false, "Ramadan", "Rome • Italy",
+        restaurants.add(Restaurant(0,true, "Koul W Thenna", "Annaba • Algeria",
                 "0699178859", "email@restaurant.dz", "description",
                 "URL", "URL",images))
     }

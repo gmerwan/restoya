@@ -8,10 +8,13 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="action_favorite">Favorite</string>
+    <string name="action_collections">Collections</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_basket">My basket</string>
+    <string name="title_activity_favorite">Favorites</string>
     <string name="title_activity_restaurant">RestaurantActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -102,4 +105,6 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="share_description">This is the link to Restoya app on GooglePlay, download it, try it, and let us know your opinion</string>
+    <string name="share_subject">Share Restoya</string>
 </resources>

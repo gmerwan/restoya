@@ -15,7 +15,7 @@ class SplachScreenActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             startActivity<HomeActivity>()
+            finish()
         }, 3000)
-        finish()
     }
 }

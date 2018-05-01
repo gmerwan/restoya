@@ -1,6 +1,8 @@
 package dz.esi.restoya.home.adapters
 
 import android.content.Context
+import android.content.Intent
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +12,11 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import dz.esi.restoya.R
+import dz.esi.restoya.home.activities.FavoriteActivity
+import dz.esi.restoya.home.activities.RestaurantActivity
 import dz.esi.restoya.home.models.Restaurant
 import kotlinx.android.synthetic.main.item_restaurant.view.*
+import org.jetbrains.anko.startActivity
 
 class RestaurantAdapter (_items: MutableList<Restaurant>, _context: Context) : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
 
@@ -25,7 +30,6 @@ class RestaurantAdapter (_items: MutableList<Restaurant>, _context: Context) : R
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-
         val options: RequestOptions = RequestOptions().centerCrop()
         options.centerCrop()
         Glide.with(context).load(item.images[0]).apply(options).into(holder.image)
@@ -40,6 +44,9 @@ class RestaurantAdapter (_items: MutableList<Restaurant>, _context: Context) : R
                 holder.favorite.setImageResource(R.drawable.ic_favorite)
             }
         }
+        holder.card.setOnClickListener {
+            context.startActivity<RestaurantActivity>("restaurant" to item)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -47,6 +54,7 @@ class RestaurantAdapter (_items: MutableList<Restaurant>, _context: Context) : R
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val card: CardView = view.card_view
         val image: ImageView = view.image
         val favorite: ImageView = view.favorite
         val name: TextView = view.name

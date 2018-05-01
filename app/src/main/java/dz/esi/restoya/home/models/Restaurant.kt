@@ -1,5 +1,7 @@
 package dz.esi.restoya.home.models
 
+import java.io.Serializable
+
 data class Restaurant (
         var _id : Int,
         var favorite : Boolean,
@@ -11,4 +13,4 @@ data class Restaurant (
         var facebook : String,
         var twitter : String,
         var images : ArrayList<Int>
-)
+) : Serializable
