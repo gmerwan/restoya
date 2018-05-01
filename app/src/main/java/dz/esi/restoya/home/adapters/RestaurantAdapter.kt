@@ -35,6 +35,11 @@ class RestaurantAdapter (_items: MutableList<Restaurant>, _context: Context) : R
         Glide.with(context).load(item.images[0]).apply(options).into(holder.image)
         holder.name.text = item.name
         holder.place.text = item.address
+        if (item.favorite) {
+            holder.favorite.setImageResource(R.drawable.ic_favorite)
+        } else {
+            holder.favorite.setImageResource(R.drawable.ic_non_favorite)
+        }
         holder.favorite.setOnClickListener {
             if (item.favorite) {
                 item.favorite = false

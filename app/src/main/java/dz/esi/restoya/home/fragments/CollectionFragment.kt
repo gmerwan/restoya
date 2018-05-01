@@ -16,7 +16,6 @@ import dz.esi.restoya.R
 import dz.esi.restoya.home.adapters.CollectionAdapter
 import dz.esi.restoya.home.models.Collection
 import dz.esi.restoya.home.models.Restaurant
-import kotlinx.android.synthetic.main.fragment_collection.*
 
 /**
  * A simple [Fragment] subclass.
@@ -74,22 +73,22 @@ class CollectionFragment : Fragment() {
     }
 
     private fun initCollections() {
-        collections.add(Collection(0,"Diabetics Food", R.drawable.healthy, restaurants))
-        collections.add(Collection(1,"Healthy Food", R.drawable.healthy, restaurants))
+        collections.add(Collection(0,"Diabetics Food", R.drawable.diabetics, restaurants))
+        collections.add(Collection(1,"Vegetarian Food", R.drawable.vegetarian, restaurants))
     }
 
-    fun isTablet(context : Context?): Boolean {
-        try {
+    private fun isTablet(context : Context?): Boolean {
+        return try {
             // Compute screen size
             val dm = context!!.resources.displayMetrics
             val screenWidth = dm.widthPixels / dm.xdpi
             val screenHeight = dm.heightPixels / dm.ydpi
             val size = Math.sqrt(Math.pow(screenWidth.toDouble(), 2.0) + Math.pow(screenHeight.toDouble(), 2.0))
             // Tablet devices should have a screen size greater than 6 inches
-            return size >= 6
+            size >= 6
         } catch (t: Throwable) {
             Log.d("TAG", "Failed to compute screen size", t)
-            return false
+            false
         }
 
     }

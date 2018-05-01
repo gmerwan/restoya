@@ -14,8 +14,6 @@ import android.view.ViewGroup
 import dz.esi.restoya.R
 import dz.esi.restoya.home.adapters.RestaurantAdapter
 import dz.esi.restoya.home.models.Restaurant
-import kotlinx.android.synthetic.main.fragment_feed.*
-import android.util.DisplayMetrics
 import android.util.Log
 
 
@@ -59,31 +57,31 @@ class FeedFragment : Fragment() {
     private fun initRestaurants() {
         images.add(R.drawable.restaurant)
         restaurants.add(Restaurant(0,false, "McDonalds", "Algiers • Algeria",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
+                "0699178859", "email@restoya.dz", "description",
+                "fb.com", "twitter.com",images))
         restaurants.add(Restaurant(0,false, "KFC", "Oran • Algeria",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
+                "0699178859", "email@restoya.dz", "description",
+                "fb.com", "twitter.com",images))
         restaurants.add(Restaurant(0,false, "Koul W Thenna", "Annaba • Algeria",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
+                "0699178859", "email@restoya.dz", "description",
+                "fb.com", "twitter.com",images))
         restaurants.add(Restaurant(0,false, "Ramadan", "Rome • Italy",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
+                "0699178859", "email@restoya.dz", "description",
+                "fb.com", "twitter.com",images))
     }
 
-    fun isTablet(context : Context?): Boolean {
-        try {
+    private fun isTablet(context : Context?): Boolean {
+        return try {
             // Compute screen size
             val dm = context!!.resources.displayMetrics
             val screenWidth = dm.widthPixels / dm.xdpi
             val screenHeight = dm.heightPixels / dm.ydpi
             val size = Math.sqrt(Math.pow(screenWidth.toDouble(), 2.0) + Math.pow(screenHeight.toDouble(), 2.0))
             // Tablet devices should have a screen size greater than 6 inches
-            return size >= 6
+            size >= 6
         } catch (t: Throwable) {
             Log.d("TAG", "Failed to compute screen size", t)
-            return false
+            false
         }
 
     }

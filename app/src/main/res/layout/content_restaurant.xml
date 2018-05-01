@@ -16,72 +16,6 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="6dp"
-            android:layout_marginRight="6dp"
-            android:layout_marginLeft="6dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="6dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginLeft="12dp"
-                        app:srcCompat="@drawable/ic_location"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="58 Cité Guettafi Madani El Harrach Alger"
-                        android:textStyle=""/>
-
-                </LinearLayout>
-
-                <view
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginLeft="48dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="6dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginLeft="12dp"
-                        app:srcCompat="@drawable/ic_restaurant_menu"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Restaurant Menu"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="6dp"
             android:layout_marginRight="6dp"
@@ -109,117 +43,159 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:text="Restaurant Info"
                         android:textStyle=""/>
 
                 </LinearLayout>
 
-                <view
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp" />
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorDevider"/>
 
                 <LinearLayout
+                    android:id="@+id/location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:onClick="onClickMethod">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="12dp"
                         android:layout_marginLeft="12dp"
-                        app:srcCompat="@drawable/ic_check"/>
+                        app:srcCompat="@drawable/ic_location"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Information 1"/>
+                        android:layout_gravity="center_vertical"
+                        android:text="58 Cité Guettafi Madani El Harrach Alger"
+                        android:textStyle=""/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:onClick="onClickMethod">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="12dp"
                         android:layout_marginLeft="12dp"
-                        app:srcCompat="@drawable/ic_check"/>
+                        app:srcCompat="@drawable/ic_phone"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Information 2"/>
+                        android:layout_gravity="center_vertical"
+                        android:text="+213 659 865 997"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:onClick="onClickMethod">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="12dp"
                         android:layout_marginLeft="12dp"
-                        app:srcCompat="@drawable/ic_check"/>
+                        app:srcCompat="@drawable/ic_email"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Information 3"/>
+                        android:layout_gravity="center_vertical"
+                        android:text="retaurant-name@restoya.dz"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/facebook"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:onClick="onClickMethod">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="12dp"
                         android:layout_marginLeft="12dp"
-                        app:srcCompat="@drawable/ic_check"/>
+                        app:srcCompat="@drawable/ic_facebook"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Information 4"/>
+                        android:layout_gravity="center_vertical"
+                        android:text="fb.com/retaurant-name"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/twitter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:onClick="onClickMethod">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="12dp"
                         android:layout_marginLeft="12dp"
-                        app:srcCompat="@drawable/ic_check"/>
+                        app:srcCompat="@drawable/ic_twitter"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Information 5"/>
+                        android:layout_gravity="center_vertical"
+                        android:text="t.co/retaurant-name"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:orientation="horizontal"
+                    android:onClick="onClickMethod">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginLeft="12dp"
+                        app:srcCompat="@drawable/ic_restaurant_menu"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Restaurant Menu"/>
 
                 </LinearLayout>
 
@@ -253,14 +229,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Notes"
+                        android:text="Description"
                         android:textStyle=""/>
 
                 </LinearLayout>
 
-                <view
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp" />
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorDevider"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -314,9 +291,10 @@
 
                 </LinearLayout>
 
-                <view
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp" />
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorDevider"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -328,9 +306,14 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:text="Sun"
+                        android:textStyle=""/>
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sun       11:00am - 09:00pm"
+                        android:text=":        11:00am - 09:00pm"
                         android:textStyle=""/>
                 </LinearLayout>
 
@@ -344,9 +327,15 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mon"
+                        android:textStyle=""/>
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mon       11:00am - 09:00pm"
+                        android:text=":        11:00am - 09:00pm"
                         android:textStyle=""/>
                 </LinearLayout>
 
@@ -360,9 +349,14 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:text="Tue"
+                        android:textStyle=""/>
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tue       11:00am - 09:00pm"
+                        android:text=":        11:00am - 09:00pm"
                         android:textStyle=""/>
                 </LinearLayout>
 
@@ -376,9 +370,14 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:text="Wed"
+                        android:textStyle=""/>
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Wed       11:00am - 09:00pm"
+                        android:text=":        11:00am - 09:00pm"
                         android:textStyle=""/>
                 </LinearLayout>
 
@@ -392,9 +391,14 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:text="Thu"
+                        android:textStyle=""/>
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Thu       11:00am - 09:00pm"
+                        android:text=":        11:00am - 09:00pm"
                         android:textStyle=""/>
 
                 </LinearLayout>

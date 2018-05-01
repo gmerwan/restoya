@@ -33,9 +33,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_check" />
-                            <entry key="sourceFile" value="$APPLICATION_HOME_DIR$/bin/D:\restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle (1).svg" />
+                            <entry key="outputName" value="ic_phone" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/../telephone.svg" />
                           </map>
                         </option>
                       </PersistentState>

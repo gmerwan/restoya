@@ -21,11 +21,17 @@
             android:layout_height="215dp"
             android:src="@drawable/restaurant"/>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:background="#4F000000"/>
+
         <ImageView
             android:id="@+id/favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:layout_gravity="top|right"
+            android:layout_margin="6dp"
             app:srcCompat="@drawable/ic_non_favorite"/>
 
         <LinearLayout
@@ -33,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
             android:orientation="vertical"
-            android:layout_margin="4dp">
+            android:layout_margin="10dp">
 
             <TextView
                 android:id="@+id/name"

@@ -58,7 +58,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the Menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.collections, menu)
+        menuInflater.inflate(R.menu.home, menu)
         return true
     }
 
@@ -67,7 +67,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
-            R.id.action_collections -> {
+            R.id.action_favorite -> {
                 startActivity<FavoriteActivity>()
                 return true
             }

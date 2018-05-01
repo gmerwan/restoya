@@ -1,6 +1,7 @@
 package dz.esi.restoya.home.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,7 @@ class ButtonAdapter (context: Context, _items: MutableList<String>) : RecyclerVi
 
         holder.button.text = item
         holder.button.setOnClickListener {
+            this.notifyDataSetChanged()
             holder.button.setBackgroundColor(context.resources.getColor((R.color.colorPrimary)))
         }
     }
