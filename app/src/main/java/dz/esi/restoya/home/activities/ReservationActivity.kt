@@ -1,9 +1,11 @@
 package dz.esi.restoya.home.activities
 
 import android.app.DatePickerDialog
+import android.app.ProgressDialog
 import android.app.TimePickerDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.Button
@@ -12,16 +14,24 @@ import android.widget.TimePicker
 import dz.esi.restoya.R
 import dz.esi.restoya.home.adapters.ButtonAdapter
 import java.util.*
+import android.support.v7.app.AlertDialog
+import android.support.v7.widget.CardView
+import android.text.format.DateFormat
+import android.widget.TextView
+import dz.esi.restoya.home.models.TextItem
 
 
 class ReservationActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         TimePickerDialog.OnTimeSetListener {
 
-    private val numberItems: ArrayList<String> = ArrayList()
-    private val timeItems: ArrayList<String> = ArrayList()
+    private val numberItems: ArrayList<TextItem> = ArrayList()
+    private val timeItems: ArrayList<TextItem> = ArrayList()
 
-    private var dateButton: Button? = null
-    private var timeButton: Button? = null
+    private var dateButton: CardView? = null
+    private var timeButton: CardView? = null
+    private var dateText: TextView? = null
+    private var timeText: TextView? = null
+    private var reserveButton: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +39,9 @@ class ReservationActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
 
         dateButton = this.findViewById(R.id.date_button)
         timeButton = this.findViewById(R.id.time_button)
+        dateText = this.findViewById(R.id.date_text)
+        timeText = this.findViewById(R.id.time_text)
+        reserveButton = this.findViewById(R.id.reserve_button)
 
         initButtonsDialogs()
         initNumberItems()
@@ -40,7 +53,7 @@ class ReservationActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
         val newDate = Calendar.getInstance()
         newDate.set(year, month, dayOfMonth)
         val dateFormat = android.text.format.DateFormat.getDateFormat(applicationContext)
-        dateButton?.text = dateFormat.format(newDate.time)
+        dateText?.text = dateFormat.format(newDate.time)
     }
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
@@ -48,7 +61,7 @@ class ReservationActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
         newDate.set(newDate.get(Calendar.YEAR), newDate.get(Calendar.MONTH),
                 newDate.get(Calendar.DAY_OF_MONTH), hourOfDay, minute)
         val timeFormat = android.text.format.DateFormat.getTimeFormat(applicationContext)
-        timeButton?.text = timeFormat.format(newDate.time)
+        timeText?.text = timeFormat.format(newDate.time)
     }
 
     private fun initButtonsDialogs() {
@@ -58,6 +71,7 @@ class ReservationActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
                     calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH),
                     calendar.get(Calendar.DAY_OF_MONTH))
+            datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000
             datePickerDialog.setTitle("Select Date")
             datePickerDialog.show()
         }
@@ -66,9 +80,29 @@ class ReservationActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
             val calendar = Calendar.getInstance()
             val timePickerDialog = TimePickerDialog(this, this,
                     calendar.get(Calendar.HOUR_OF_DAY),
-                    calendar.get(Calendar.MINUTE), true)
+                    calendar.get(Calendar.MINUTE), DateFormat.is24HourFormat(this))
             timePickerDialog.setTitle("Select Time")
             timePickerDialog.show()
+        }
+
+        reserveButton?.setOnClickListener {
+            val progressDialog = ProgressDialog(this)
+            progressDialog.setMessage("Reserving table, please wait.")
+            progressDialog.show()
+            Handler().postDelayed({
+                if (progressDialog.isShowing) {
+                    progressDialog.dismiss()
+                }
+                val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+                builder.setTitle("Reservation")
+                        .setMessage("Congrats, your reservation is confirmed.")
+                        .setPositiveButton(android.R.string.ok) { dialog, _ ->
+                            dialog.dismiss()
+                            finish()
+                        }
+                        .setIcon(R.drawable.ic_menu_table)
+                        .show()
+            }, 2000)
         }
     }
 
@@ -84,29 +118,29 @@ class ReservationActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
     }
 
     private fun initNumberItems() {
-        numberItems.add("1")
-        numberItems.add("2")
-        numberItems.add("3")
-        numberItems.add("4")
-        numberItems.add("5")
-        numberItems.add("6")
-        numberItems.add("7")
-        numberItems.add("8")
-        numberItems.add("9")
-        numberItems.add("10")
+        numberItems.add(TextItem(false, "1"))
+        numberItems.add(TextItem(false, "2"))
+        numberItems.add(TextItem(false, "3"))
+        numberItems.add(TextItem(false, "4"))
+        numberItems.add(TextItem(false, "5"))
+        numberItems.add(TextItem(false, "6"))
+        numberItems.add(TextItem(false, "7"))
+        numberItems.add(TextItem(false, "8"))
+        numberItems.add(TextItem(false, "9"))
+        numberItems.add(TextItem(false, "10"))
     }
 
     private fun initTimeItems() {
-        timeItems.add("11:00")
-        timeItems.add("12:00")
-        timeItems.add("13:00")
-        timeItems.add("14:00")
-        timeItems.add("15:00")
-        timeItems.add("16:00")
-        timeItems.add("17:00")
-        timeItems.add("18:00")
-        timeItems.add("19:00")
-        timeItems.add("20:00")
-        timeItems.add("21:00")
+        timeItems.add(TextItem(false, "11:00"))
+        timeItems.add(TextItem(false, "12:00"))
+        timeItems.add(TextItem(false, "13:00"))
+        timeItems.add(TextItem(false, "14:00"))
+        timeItems.add(TextItem(false, "15:00"))
+        timeItems.add(TextItem(false, "16:00"))
+        timeItems.add(TextItem(false, "17:00"))
+        timeItems.add(TextItem(false, "18:00"))
+        timeItems.add(TextItem(false, "19:00"))
+        timeItems.add(TextItem(false, "20:00"))
+        timeItems.add(TextItem(false, "21:00"))
     }
 }

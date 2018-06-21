@@ -25,6 +25,9 @@ class FeedFragment : Fragment() {
 
     private val restaurants: ArrayList<Restaurant> = ArrayList()
     private val images: ArrayList<Int> = ArrayList()
+    private val images1: ArrayList<Int> = ArrayList()
+    private val images2: ArrayList<Int> = ArrayList()
+    private val images3: ArrayList<Int> = ArrayList()
 
     companion object {
         /**
@@ -55,19 +58,26 @@ class FeedFragment : Fragment() {
     }
 
     private fun initRestaurants() {
-        images.add(R.drawable.restaurant)
-        restaurants.add(Restaurant(0,false, "McDonalds", "Algiers • Algeria",
-                "0699178859", "email@restoya.dz", "description",
-                "fb.com", "twitter.com",images))
-        restaurants.add(Restaurant(0,false, "KFC", "Oran • Algeria",
-                "0699178859", "email@restoya.dz", "description",
-                "fb.com", "twitter.com",images))
-        restaurants.add(Restaurant(0,false, "Koul W Thenna", "Annaba • Algeria",
-                "0699178859", "email@restoya.dz", "description",
-                "fb.com", "twitter.com",images))
-        restaurants.add(Restaurant(0,false, "Ramadan", "Rome • Italy",
-                "0699178859", "email@restoya.dz", "description",
-                "fb.com", "twitter.com",images))
+        images.add(R.drawable.restaurant1)
+        images.add(R.drawable.restaurant2)
+        images.add(R.drawable.restaurant3)
+
+        images1.add(R.drawable.restaurant2)
+        images1.add(R.drawable.restaurant3)
+        images1.add(R.drawable.restaurant4)
+
+        images2.add(R.drawable.restaurant3)
+        images2.add(R.drawable.restaurant4)
+        images2.add(R.drawable.restaurant1)
+
+        images3.add(R.drawable.restaurant4)
+        images3.add(R.drawable.restaurant1)
+        images3.add(R.drawable.restaurant2)
+
+        restaurants.add(Restaurant(false, "McDonalds", images))
+        restaurants.add(Restaurant(false, "KFC", images1))
+        restaurants.add(Restaurant(false, "Koul W Thenna", images2))
+        restaurants.add(Restaurant(false, "Ramadan", images3))
     }
 
     private fun isTablet(context : Context?): Boolean {

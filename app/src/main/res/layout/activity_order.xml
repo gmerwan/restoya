@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.activities.OrderActivity">
+    tools:context="dz.esi.restoya.home.activities.OrderActivity">
+
+    <fragment
+        android:id="@+id/restaurant_basket"
+        android:name="dz.esi.restoya.home.fragments.OrderFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </android.support.constraint.ConstraintLayout>

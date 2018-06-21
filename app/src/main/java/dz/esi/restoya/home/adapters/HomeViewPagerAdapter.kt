@@ -3,7 +3,7 @@ package dz.esi.restoya.home.adapters
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
-import dz.esi.restoya.home.fragments.CollectionFragment
+import dz.esi.restoya.home.fragments.SpecialCollectionFragment
 import dz.esi.restoya.home.fragments.FeedFragment
 
 
@@ -14,7 +14,7 @@ class HomeViewPagerAdapter (fragmentManager: FragmentManager) : FragmentStatePag
         return if (position == 0) {
             FeedFragment.newInstance()
         } else {
-            CollectionFragment.newInstance()
+            SpecialCollectionFragment.newInstance()
         }
     }
 

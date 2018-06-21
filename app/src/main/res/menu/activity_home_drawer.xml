@@ -3,16 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_table"
-            android:icon="@drawable/ic_menu_table"
-            android:title="Book a Table" />
-        <item
-            android:id="@+id/nav_order"
-            android:icon="@drawable/ic_menu_order"
-            android:title="Order Online" />
-    </group>
+    <!--<group android:checkableBehavior="single">-->
+        <!--<item-->
+            <!--android:id="@+id/nav_order"-->
+            <!--android:icon="@drawable/ic_menu_order"-->
+            <!--android:title="Order Online" />-->
+    <!--</group>-->
 
     <group android:id="@+id/menu_bottom"
         android:checkableBehavior="single">

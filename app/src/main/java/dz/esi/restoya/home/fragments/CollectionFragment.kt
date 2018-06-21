@@ -7,15 +7,15 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import dz.esi.restoya.R
-import dz.esi.restoya.home.adapters.CollectionAdapter
-import dz.esi.restoya.home.models.Collection
+import dz.esi.restoya.home.adapters.RestaurantAdapter
 import dz.esi.restoya.home.models.Restaurant
+import android.util.Log
+
 
 /**
  * A simple [Fragment] subclass.
@@ -23,7 +23,6 @@ import dz.esi.restoya.home.models.Restaurant
  */
 class CollectionFragment : Fragment() {
 
-    private val collections: ArrayList<Collection> = ArrayList()
     private val restaurants: ArrayList<Restaurant> = ArrayList()
     private val images: ArrayList<Int> = ArrayList()
 
@@ -43,52 +42,40 @@ class CollectionFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_collection, container, false)
+        val view = inflater.inflate(R.layout.fragment_feed, container, false)
         initRestaurants()
-        initCollections()
-        val recyclerView = view.findViewById<RecyclerView>(R.id.collection_recyclerView)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.feed_recyclerView)
         if (isTablet(context)) {
             recyclerView.layoutManager = GridLayoutManager(context, 3)
         } else {
             recyclerView.layoutManager = LinearLayoutManager(context)
         }
-        recyclerView.adapter = CollectionAdapter(collections, requireContext())
+        recyclerView.adapter = RestaurantAdapter(restaurants, requireContext())
         return view
     }
 
     private fun initRestaurants() {
-        images.add(R.drawable.restaurant)
-        restaurants.add(Restaurant(0,false, "McDonalds", "Algiers • Algeria",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
-        restaurants.add(Restaurant(0,false, "KFC", "Oran • Algeria",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
-        restaurants.add(Restaurant(0,false, "Koul W Thenna", "Annaba • Algeria",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
-        restaurants.add(Restaurant(0,false, "Ramadan", "Rome • Italy",
-                "0699178859", "email@restaurant.dz", "description",
-                "URL", "URL",images))
+        images.add(R.drawable.restaurant1)
+        images.add(R.drawable.restaurant1)
+        images.add(R.drawable.restaurant1)
+        restaurants.add(Restaurant(false, "McDonalds", images))
+        restaurants.add(Restaurant(true, "Koul W Thenna", images))
+        restaurants.add(Restaurant(false, "McDonalds", images))
+        restaurants.add(Restaurant(true, "Koul W Thenna", images))
     }
 
-    private fun initCollections() {
-        collections.add(Collection(0,"Diabetics Food", R.drawable.diabetics, restaurants))
-        collections.add(Collection(1,"Vegetarian Food", R.drawable.vegetarian, restaurants))
-    }
-
-    private fun isTablet(context : Context?): Boolean {
-        return try {
+    fun isTablet(context : Context?): Boolean {
+        try {
             // Compute screen size
             val dm = context!!.resources.displayMetrics
             val screenWidth = dm.widthPixels / dm.xdpi
             val screenHeight = dm.heightPixels / dm.ydpi
             val size = Math.sqrt(Math.pow(screenWidth.toDouble(), 2.0) + Math.pow(screenHeight.toDouble(), 2.0))
             // Tablet devices should have a screen size greater than 6 inches
-            size >= 6
+            return size >= 6
         } catch (t: Throwable) {
             Log.d("TAG", "Failed to compute screen size", t)
-            false
+            return false
         }
 
     }

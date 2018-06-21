@@ -9,6 +9,7 @@
     -->
     <uses-permission android:name="com.androidtutorialpoint.mymapsappsdirection.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -21,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".start.SplachScreenActivity"
+            android:name=".start.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -33,31 +34,27 @@
         <activity
             android:name=".home.activities.HomeActivity"
             android:label="@string/title_activity_home"
-            android:parentActivityName=".start.SplachScreenActivity"
+            android:parentActivityName=".start.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="dz.esi.restoya.start.SplachScreenActivity" />
-        </activity>
-        <activity android:name=".home.activities.OrderActivity">
+                android:value="dz.esi.restoya.start.SplashScreenActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="dz.esi.restoya.home.activities.HomeActivity" />
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
         <activity android:name=".home.activities.ReservationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="dz.esi.restoya.home.activities.HomeActivity" />
         </activity>
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -84,21 +81,44 @@
                 android:value="dz.esi.restoya.home.activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".home.activities.BasketActivity"
-            android:label="@string/title_activity_basket">
+            android:name=".home.activities.CollectionActivity"
+            android:label="@string/title_activity_collections"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dz.esi.restoya.home.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".home.activities.OrderActivity"
+            android:label="@string/title_activity_order">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="dz.esi.restoya.home.activities.RestaurantActivity" />
         </activity>
-        <activity android:name=".settings.SettingsActivity">
+        <activity android:name=".settings.SettingsActivity"
+            android:label="@string/title_activity_settings">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="dz.esi.restoya.home.activities.HomeActivity" />
         </activity>
-        <activity android:name=".about.AboutActivity">
+        <activity android:name=".about.AboutActivity"
+            android:label="@string/title_activity_about">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="dz.esi.restoya.home.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".home.activities.GalleryActivity"
+            android:label="@string/title_activity_gallery"
+            android:parentActivityName=".home.activities.RestaurantActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".home.activities.MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dz.esi.restoya.home.activities.RestaurantActivity" />
         </activity>
     </application>
 

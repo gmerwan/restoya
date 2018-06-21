@@ -7,7 +7,7 @@ import dz.esi.restoya.home.activities.HomeActivity
 import dz.esi.restoya.R
 import org.jetbrains.anko.startActivity
 
-class SplachScreenActivity : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +16,11 @@ class SplachScreenActivity : AppCompatActivity() {
         Handler().postDelayed({
             startActivity<HomeActivity>()
             finish()
-        }, 3000)
+        }, 1500)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        finish()
     }
 }

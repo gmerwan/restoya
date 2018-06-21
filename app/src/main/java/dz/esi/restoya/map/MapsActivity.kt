@@ -104,7 +104,7 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback, GoogleApiClient.Con
 
         val btnRestaurant : Button = findViewById(R.id.btnRestaurant)
         btnRestaurant.setOnClickListener {
-            val restaurant = "restaurant"
+            val restaurant = "restaurant1"
             Log.d("onClick", "Button is Clicked")
             mMap!!.clear()
             val url = getUrl(latitude, longitude, restaurant)

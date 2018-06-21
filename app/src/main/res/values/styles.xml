@@ -21,4 +21,9 @@
         <item name="colorButtonNormal">@color/colorPrimaryLight</item>
     </style>
 
+    <style name="AppTheme.Button2" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="colorButtonNormal">#00FFFFFF</item>
+    </style>
+
 </resources>
