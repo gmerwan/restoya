@@ -12,7 +12,6 @@ import android.view.View
 import dz.esi.restoya.R
 import dz.esi.restoya.about.AboutActivity
 import dz.esi.restoya.home.adapters.HomeViewPagerAdapter
-import dz.esi.restoya.home.models.Restaurant
 import dz.esi.restoya.map.MapsActivity
 import dz.esi.restoya.settings.SettingsActivity
 import kotlinx.android.synthetic.main.activity_home.*

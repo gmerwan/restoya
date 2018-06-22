@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import dz.esi.restoya.R
+import dz.esi.restoya.database.entities.Collection
+import dz.esi.restoya.database.entities.Dish
+import dz.esi.restoya.database.entities.Restaurant
 import dz.esi.restoya.home.expandable.CollectionView
 import dz.esi.restoya.home.expandable.DishView
-import dz.esi.restoya.home.models.*
 import kotlinx.android.synthetic.main.activity_menu.*
 import kotlinx.android.synthetic.main.content_menu.*
 import org.jetbrains.anko.startActivity

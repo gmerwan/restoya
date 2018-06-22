@@ -1,4 +1,6 @@
-package dz.esi.restoya.home.models
+package dz.esi.restoya.models
+
+import dz.esi.restoya.database.entities.Restaurant
 
 data class SpecialCollection (
         var name : String,

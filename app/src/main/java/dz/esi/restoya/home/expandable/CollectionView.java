@@ -14,7 +14,7 @@ import com.mindorks.placeholderview.annotations.expand.ParentPosition;
 import com.mindorks.placeholderview.annotations.expand.SingleTop;
 
 import dz.esi.restoya.R;
-import dz.esi.restoya.home.models.Collection;
+import dz.esi.restoya.database.entities.Collection;
 
 @Parent
 @SingleTop

@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import dz.esi.restoya.R
 import dz.esi.restoya.home.activities.CollectionActivity
-import dz.esi.restoya.home.models.SpecialCollection
+import dz.esi.restoya.models.SpecialCollection
 import kotlinx.android.synthetic.main.item_collection.view.*
 import org.jetbrains.anko.startActivity
 

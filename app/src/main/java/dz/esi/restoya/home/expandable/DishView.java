@@ -12,7 +12,7 @@ import com.mindorks.placeholderview.annotations.expand.ChildPosition;
 import com.mindorks.placeholderview.annotations.expand.ParentPosition;
 
 import dz.esi.restoya.R;
-import dz.esi.restoya.home.models.Dish;
+import dz.esi.restoya.database.entities.Dish;
 
 @Layout(R.layout.item_menu_dish)
 public class DishView {

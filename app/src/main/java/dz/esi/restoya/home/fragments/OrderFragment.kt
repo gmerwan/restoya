@@ -14,7 +14,7 @@ import android.view.ViewGroup
 import dz.esi.restoya.R
 import android.util.Log
 import dz.esi.restoya.home.adapters.OrderAdapter
-import dz.esi.restoya.home.models.Dish
+import dz.esi.restoya.database.entities.Dish
 
 
 /**

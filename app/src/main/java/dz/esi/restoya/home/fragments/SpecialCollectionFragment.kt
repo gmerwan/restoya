@@ -14,8 +14,8 @@ import android.view.ViewGroup
 
 import dz.esi.restoya.R
 import dz.esi.restoya.home.adapters.SpecialCollectionAdapter
-import dz.esi.restoya.home.models.SpecialCollection
-import dz.esi.restoya.home.models.Restaurant
+import dz.esi.restoya.models.SpecialCollection
+import dz.esi.restoya.database.entities.Restaurant
 
 /**
  * A simple [Fragment] subclass.

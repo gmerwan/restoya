@@ -7,7 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import dz.esi.restoya.R
-import dz.esi.restoya.home.models.Restaurant
+import dz.esi.restoya.database.entities.Restaurant
 import dz.esi.restoya.map.MapsActivity
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import org.jetbrains.anko.browse

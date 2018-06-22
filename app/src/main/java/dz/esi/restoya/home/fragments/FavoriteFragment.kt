@@ -13,7 +13,7 @@ import android.view.ViewGroup
 
 import dz.esi.restoya.R
 import dz.esi.restoya.home.adapters.RestaurantAdapter
-import dz.esi.restoya.home.models.Restaurant
+import dz.esi.restoya.database.entities.Restaurant
 import android.util.Log
 
 

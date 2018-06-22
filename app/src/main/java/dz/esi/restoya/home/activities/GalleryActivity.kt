@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 import dz.esi.restoya.R
-import dz.esi.restoya.home.models.Restaurant
+import dz.esi.restoya.database.entities.Restaurant
 import kotlinx.android.synthetic.main.activity_gallery.*
 import kotlinx.android.synthetic.main.fragment_gallery.view.*
 
@@ -30,7 +30,8 @@ class GalleryActivity : AppCompatActivity() {
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
     companion object {
-    lateinit var restaurant: Restaurant }
+    lateinit var restaurant: Restaurant
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

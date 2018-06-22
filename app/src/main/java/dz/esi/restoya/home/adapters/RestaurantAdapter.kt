@@ -1,7 +1,6 @@
 package dz.esi.restoya.home.adapters
 
 import android.content.Context
-import android.content.Intent
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -12,9 +11,8 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import dz.esi.restoya.R
-import dz.esi.restoya.home.activities.FavoriteActivity
 import dz.esi.restoya.home.activities.RestaurantActivity
-import dz.esi.restoya.home.models.Restaurant
+import dz.esi.restoya.database.entities.Restaurant
 import kotlinx.android.synthetic.main.item_restaurant.view.*
 import org.jetbrains.anko.startActivity
 

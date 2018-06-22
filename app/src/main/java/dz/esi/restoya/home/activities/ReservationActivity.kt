@@ -18,7 +18,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.widget.CardView
 import android.text.format.DateFormat
 import android.widget.TextView
-import dz.esi.restoya.home.models.TextItem
+import dz.esi.restoya.models.TextItem
 
 
 class ReservationActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,

@@ -1,4 +1,4 @@
-package dz.esi.restoya.home.models
+package dz.esi.restoya.models
 
 data class TextItem (
         var checked : Boolean,
